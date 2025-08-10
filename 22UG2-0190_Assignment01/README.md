@@ -3,6 +3,8 @@
 overview: a basic contact manager webapp, with the capbaility
 to add new contacts with name and remove existing contacts.
 
+![Frontend Screenshot](frontend/frontendimg.png)
+
 3 services - frontend/backend/database
 db - has persistent volume. 
 its location:
