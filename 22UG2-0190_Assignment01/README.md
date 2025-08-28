@@ -7,7 +7,9 @@ to add new contacts with name and remove existing contacts.
 
 3 services - frontend/backend/database
 db - has persistent volume. 
+
 its location:
+
 "Mountpoint": "/var/lib/docker/volumes/contact_db_data/_data",
         "Name": "contact_db_data",
 
@@ -39,11 +41,11 @@ The application is made of:
 
 ## Container Configuration
 1. **Frontend Container**  
-   - Based on Node.js 18 image.  
+   - Based on Node.js 18 image. (built from ./frontend folder)  
    - Runs on port 3000.  
 
 2. **Backend Container**  
-   - Based on Node.js 18 image.  
+   - Based on Node.js 18 image. (built from ./backend folder)  
    - Run on port 5000. 
 
 3. **Database Container**  
@@ -62,20 +64,34 @@ The application is made of:
 First clone the github to your respective PC.
 cd into the folder.
 
-1. TO make all the scripts executable
+1. To make all the scripts executable
+```bash
 chmod +x prepare-app.sh start-app.sh stop-app.sh remove-app.sh 
-
+```
 2. To prepare the app (creates network and volume and builds images)
+```bash
 ./prepare-app.sh
-
+```
 *make sure the given ports are available on your PC, without any other application using it. 
 
 3. To start and run the app
+```bash
 ./start-app.sh
-
+```
 4. This will then give localhost link to access web app as:
+
 Frontend: http://localhost:5173
+
 Backend API: http://localhost:3000/api/contacts
+
+5. To stop the app
+```bash
+./stop-app.sh
+```
+6. To remove all resources allocated for the application
+```bash
+./remove-app.sh
+```
 
 
 
