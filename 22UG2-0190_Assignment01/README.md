@@ -35,6 +35,7 @@ The application is made of:
   Used for communication between the frontend, backend, and database containers.
 - **Volume**: `contactapp_data`  
   Stores PostgreSQL data so that it persists even after container restarts.
+  -"Mountpoint": "/var/lib/docker/volumes/contact_db_data/_data", "Name": "contact_db_data",
 
 ## Container Configuration
 1. **Frontend Container**  
@@ -48,9 +49,7 @@ The application is made of:
 3. **Database Container**  
    - Based on `postgres:13` image.  
    - Initializes with `init.sql` to create required tables.  
-   -"Mountpoint": "/var/lib/docker/volumes/contact_db_data/_data",
-        "Name": "contact_db_data",
-
+  
 ## Container List
 | Container Name            | Role            | Port Mapping        |
 |---------------------------|-----------------|---------------------|
